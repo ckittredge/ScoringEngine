@@ -4,3 +4,6 @@ c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringE
 c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringEngine\obj\Debug\ScoringEngine.csprojResolveAssemblyReference.cache
 c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringEngine\obj\Debug\ScoringEngine.exe
 c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringEngine\obj\Debug\ScoringEngine.pdb
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngine\bin\Debug\ScoringEngine.exe.config
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngine\obj\Debug\ScoringEngine.exe
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngine\obj\Debug\ScoringEngine.pdb

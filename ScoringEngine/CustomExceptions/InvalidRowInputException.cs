@@ -18,9 +18,9 @@ namespace ScoringEngine.CustomExceptions
         #region constructors
 
         public InvalidRowInputException(string message)
+            : base(message)
         {
             InvalidColumns = new List<int>();
-            Message = message;
         }
 
         public InvalidRowInputException(List<int> invalidColumns)

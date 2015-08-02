@@ -71,14 +71,17 @@ namespace ScoringEngine.TypeConverters
                 }
             }
 
-            salesLeads.ForEach(sl => sl.EventScoreSum = sl.EventScores.Sum(es => es.WeightedScore));
-            double min = salesLeads.Min(x => x.EventScoreSum);
-            double max = salesLeads.Max(x => x.EventScoreSum);
-
-            foreach (SalesLead sl in salesLeads)
+            if (salesLeads.Count > 0)
             {
-                sl.EventScoreNormalized = _salesLeadCalculationUtils.CalculateNormalizedValue(min, max, sl.EventScoreSum);
-                sl.ContactQuartile = _salesLeadCalculationUtils.DetermineQuartile(sl.EventScoreNormalized);
+                salesLeads.ForEach(sl => sl.EventScoreSum = sl.EventScores.Sum(es => es.WeightedScore));
+                double min = salesLeads.Min(x => x.EventScoreSum);
+                double max = salesLeads.Max(x => x.EventScoreSum);
+
+                foreach (SalesLead sl in salesLeads)
+                {
+                    sl.EventScoreNormalized = _salesLeadCalculationUtils.CalculateNormalizedValue(min, max, sl.EventScoreSum);
+                    sl.ContactQuartile = _salesLeadCalculationUtils.DetermineQuartile(sl.EventScoreNormalized);
+                }
             }
 
             return salesLeads.OrderBy(x => x.ContactId).ToList();
@@ -138,7 +141,7 @@ namespace ScoringEngine.TypeConverters
             {
                 throw new InvalidRowInputException("Invalid number of columns for row " + rowNumber + ". " +
                                                    "Each row must contain comma separated columns for " +
-                                                   "contactId, event, and score");
+                                                   "contactId, event, and score.");
             }
         }
 

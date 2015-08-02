@@ -11,14 +11,14 @@ namespace ScoringEngine
     {
         static void Main(string[] args)
         {
-            SalesLeadTypeConverter salesLeadParser = new SalesLeadTypeConverter(new EventTypeConverter(),
+            SalesLeadTypeConverter salesLeadTypeConverter = new SalesLeadTypeConverter(new EventTypeConverter(),
                 new SalesLeadCalculationUtils(), new CsvRederFactory());
 
             Console.Write("Please provide a file path for a sales lead csv file:");
             var filePath = Console.ReadLine();
             try
             {
-                var salesLeadList = salesLeadParser.ConvertToType(filePath);
+                var salesLeadList = salesLeadTypeConverter.ConvertToType(filePath);
                 if (salesLeadList != null) salesLeadList.ForEach(x => x.Print());
             }
             catch (FileNotFoundException fileNotFoundException)
