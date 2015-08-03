@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
+using ScoringEngine.CustomExceptions;
 using ScoringEngine.Enums;
 using ScoringEngine.Models;
 
@@ -12,11 +14,18 @@ namespace ScoringEngine.Parsers
     public class CsvParser : StreamReader, ICsvParser
     {
 
+        #region class variables
+
+        private int _totalRows;
+
+        #endregion
+
         #region constructor
 
         public CsvParser(string filePath)
             : base(filePath)
         {
+            _totalRows = File.ReadLines(@filePath).Count();
         }
 
         #endregion
@@ -26,7 +35,15 @@ namespace ScoringEngine.Parsers
         public bool ReadRow(Row row)
         {
             row.LineStr = ReadLine();
-            if (String.IsNullOrEmpty(row.LineStr)) return false;
+
+            if (String.IsNullOrEmpty(row.LineStr))
+            {
+                if (row.RowNumber < _totalRows)
+                {
+                    throw new InvalidRowInputException("Row is empty");
+                }
+                return false;
+            }
 
             int position = 0;
             int rows = 0;

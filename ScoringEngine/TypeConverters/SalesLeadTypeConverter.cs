@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
@@ -44,30 +45,45 @@ namespace ScoringEngine.TypeConverters
             {
                 Row row = new Row();
                 int rowNumber = 1;
-                while (csvParser.ReadRow(row))
+                try
                 {
-                    try
+                    row.RowNumber = rowNumber;
+                    while (csvParser.ReadRow(row))
                     {
-                        AddUpdateSalesLead(ref salesLeads, row, rowNumber);
-                        rowNumber++;
-                    }
-                    catch (InvalidRowInputException invalidRowException)
-                    {
-                        if (invalidRowException.InvalidColumns.Count > 0)
+                        try
                         {
-                            PrintInvalidRowMessage(invalidRowException, rowNumber);
+                            AddUpdateSalesLead(ref salesLeads, row, rowNumber);
+                            rowNumber++;
+                            row.RowNumber = rowNumber;
                         }
-                        else
+                        catch (InvalidRowInputException invalidRowException)
                         {
-                            Console.WriteLine(invalidRowException.Message);
+                            if (invalidRowException.InvalidColumns.Count > 0)
+                            {
+                                PrintInvalidRowMessage(invalidRowException, rowNumber);
+                            }
+                            else
+                            {
+                                Console.WriteLine(invalidRowException.Message);
+                            }
+                            return null;
                         }
-                        return null;
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.ToString());
+                            return null;
+                        }
                     }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.ToString());
-                        return null;
-                    }
+                }
+                catch (InvalidRowInputException invalidRowException)
+                {
+                    Console.WriteLine("Row {0} contains no data. Please make sure the csv file has been formatted correctly.", rowNumber);
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return null;
                 }
             }
 
