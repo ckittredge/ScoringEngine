@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using FluentAssertions.Common;
 using NSubstitute;
-using NSubstitute.Core;
-using NSubstitute.ExceptionExtensions;
 using NUnit.Framework;
-using ScoringEngine.CustomExceptions;
 using ScoringEngine.Enums;
 using ScoringEngine.Factories;
 using ScoringEngine.Models;
 using ScoringEngine.Parsers;
 using ScoringEngine.TypeConverters;
 using ScoringEngine.Utils;
-using ScoringEngineTest.TestUtils;
+using ScoringEngineTest.UnitTestUtils;
 
 namespace ScoringEngineTest.TypeConverters
 {
@@ -39,7 +34,7 @@ namespace ScoringEngineTest.TypeConverters
         }
 
         [Test]
-        public void ConvertToType1()
+        public void ConvertToType()
         {
             const string testFilePath = "C:\testFile.csv";
             var readRowResults = new Results<bool>(true)

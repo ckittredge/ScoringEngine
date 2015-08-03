@@ -6,13 +6,6 @@ using ScoringEngine.Models;
 
 namespace ScoringEngine.Utils
 {
-    public interface ISalesLeadCalcuationUtils
-    {
-        double CalculateWeightedValue(EventType type, double value);
-        int CalculateNormalizedValue(double min, double max, double value);
-        Quartile DetermineQuartile(double value);
-    }
-
     public class SalesLeadCalculationUtils : ISalesLeadCalcuationUtils
     {
         #region class variables
@@ -42,10 +35,10 @@ namespace ScoringEngine.Utils
 
         public int CalculateNormalizedValue(double min, double max, double value)
         {
-            return (int)Math.Round(((value - min) / (max - min)) * 100);
+            return (int)Math.Round(((value - min) / (max - min)) * 100.0);
         }
 
-        public Quartile DetermineQuartile(double value)
+        public Quartile DetermineQuartile(int value)
         {
             if (value < 0 || value > 100) return null;
             return _quartiles.FirstOrDefault(x => value >= x.Min && value <= x.Max);

@@ -44,6 +44,7 @@
     <Compile Include="CustomExceptions\InvalidRowInputException.cs" />
     <Compile Include="Enums\EnumConverter.cs" />
     <Compile Include="Enums\EventType.cs" />
+    <Compile Include="Enums\IEnumConverter.cs" />
     <Compile Include="Factories\CsvReaderFactory.cs" />
     <Compile Include="Factories\ICsvReaderFactory.cs" />
     <Compile Include="Models\Quartile.cs" />
@@ -57,6 +58,9 @@
     <Compile Include="TypeConverters\SalesLeadTypeConverter.cs" />
     <Compile Include="ScoringEngineMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\FileTypeUtils.cs" />
+    <Compile Include="Utils\IFileTypeUtils.cs" />
+    <Compile Include="Utils\ISalesLeadCalculationUtils.cs" />
     <Compile Include="Utils\SalesLeadCalculationUtils.cs" />
   </ItemGroup>
   <ItemGroup>

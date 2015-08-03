@@ -5,3 +5,20 @@ c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringE
 c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringEngineTest\obj\Debug\ScoringEngineTest.pdb
 c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringEngineTest\bin\Debug\ScoringEngine.exe
 c:\users\ckittredge\documents\visual studio 2013\Projects\ScoringEngine\ScoringEngineTest\bin\Debug\ScoringEngine.pdb
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\ScoringEngineTest.dll
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\ScoringEngineTest.pdb
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\FluentAssertions.Core.dll
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\FluentAssertions.dll
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\NSubstitute.dll
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\nunit.framework.dll
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\ScoringEngine.exe
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\ScoringEngine.pdb
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\FluentAssertions.pdb
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\FluentAssertions.xml
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\FluentAssertions.Core.pdb
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\FluentAssertions.Core.xml
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\NSubstitute.xml
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\bin\Debug\nunit.framework.xml
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\obj\Debug\ScoringEngineTest.csprojResolveAssemblyReference.cache
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\obj\Debug\ScoringEngineTest.dll
+C:\Users\ckittredge\Desktop\ScoringEngine\ScoringEngineTest\obj\Debug\ScoringEngineTest.pdb

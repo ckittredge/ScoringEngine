@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScoringEngineTest.TestUtils
+namespace ScoringEngineTest.UnitTestUtils
 {
     public class Results<T>
     {

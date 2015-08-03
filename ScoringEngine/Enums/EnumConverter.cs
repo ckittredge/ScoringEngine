@@ -3,12 +3,6 @@ using System.Collections.Generic;
 
 namespace ScoringEngine.Enums
 {
-    public interface IEnumConverter<T>
-    {
-        bool TryParseString(string str, out T type);
-
-    }
-
     public abstract class EnumConverter<T> : IEnumConverter<T>
     {
         #region class variables
