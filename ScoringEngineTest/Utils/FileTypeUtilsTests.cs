@@ -21,6 +21,9 @@ namespace ScoringEngineTest.Utils
         {
             _fileTypeUtils.ContainsCsvExtension("C:\\somepath\\sometest.csv").ShouldBeEquivalentTo(true);
             _fileTypeUtils.ContainsCsvExtension("C:\\somepath\\sometest.someother.csv").ShouldBeEquivalentTo(true);
+            _fileTypeUtils.ContainsCsvExtension("\"C:\\somepath\\sometest.someother.csv\"").ShouldBeEquivalentTo(true);
+            _fileTypeUtils.ContainsCsvExtension("\"C:\\somepath\\sometest.someother.csv").ShouldBeEquivalentTo(true);
+            _fileTypeUtils.ContainsCsvExtension("C:\\somepath\\sometest.someother.csv\"").ShouldBeEquivalentTo(true);
         }
 
         [Test]

@@ -9,6 +9,7 @@ namespace ScoringEngine.Utils
         public bool ContainsCsvExtension(string filePath)
         {
             if (String.IsNullOrEmpty(filePath)) return false;
+            filePath = filePath.Replace("\"", "");
             List<string> splitArr = filePath.Split('.').ToList();
             return splitArr.Last().Trim().ToLowerInvariant() == "csv";
 

@@ -23,12 +23,13 @@ namespace ScoringEngine
                 var filePath = Console.ReadLine();
                 try
                 {
-                    if (!fileTypeUtils.ContainsCsvExtension(filePath))
+                    if (String.IsNullOrEmpty(filePath) || !fileTypeUtils.ContainsCsvExtension(filePath))
                     {
                         Console.WriteLine("Invalid file extension. Please ensure that you enter a path to a valid csv file.");
                     }
                     else
                     {
+                        filePath = filePath.Replace("\"", "");
                         var salesLeadList = salesLeadTypeConverter.ConvertToType(filePath);
                         if (salesLeadList != null) salesLeadList.ForEach(x => x.Print());
                     }
